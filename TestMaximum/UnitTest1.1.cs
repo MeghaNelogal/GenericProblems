@@ -1,16 +1,19 @@
 using GenericProblems;
 using NUnit.Framework;
+using static GenericProblems.FindMaximum;
 
-namespace TestMaximum
+namespace TestMaximums
 {
     public class Tests
     {
         [Test]
-        public void GivenStringInput_WhenTestMax_FirstPosition_ShouldReturnMaxNum()
+        public void GivenIntInput_WhenTestMax_ShouldReturnMaxNum()
         {
-            FindMaximum max = new FindMaximum();
-            string actual = max.FindMaxString("Banana", "Peach", "Apple");
-            Assert.AreEqual(actual, "Banana");
+            GenericMaximum<int> max = new GenericMaximum<int>();
+            int[] array = { 1, 2, 3, 4, 6, 7, 10 };
+            int actual = max.FindMaxElement(array);
+            Assert.AreEqual(actual, 10);
+
         }
     }
 }

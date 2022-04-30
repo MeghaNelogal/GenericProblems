@@ -8,27 +8,15 @@ namespace GenericProblems
 {
     public class FindMaximum
     {
-        public string FindMaxString(string firstString, string secondString, string thirdString)
+        public class GenericMaximum<T> where T : IComparable<T>
         {
-            int first_Length = firstString.Length;
-            int second_Length = secondString.Length;
-            int third_Length = thirdString.Length;
-            if (first_Length.CompareTo(second_Length) > 0 && first_Length.CompareTo(third_Length) > 0)
+            public T FindMaxElement(T[] array)
             {
-                Console.WriteLine("First Number is Greater");
-                return firstString;
-            }
-            if (second_Length.CompareTo(first_Length) > 0 && second_Length.CompareTo(third_Length) > 0)
-            {
-                Console.WriteLine("Second Number is Greater");
-                return secondString;
-            }
-            else
-            {
-                Console.Write("Greatest Number is third:->");
-                return thirdString;
+                Array.Sort(array);
+                int length_Array = array.Length;
+                T element = array[length_Array - 1];
+                return element;
             }
         }
     }
 }
-       
